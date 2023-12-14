@@ -13,19 +13,27 @@
 <body class="font-sans bg-gray-700">
 
     <div class="w-[650px] m-auto mt-[50px] container mx-auto my-8 p-8 bg-white shadow-lg rounded-lg">
-        <h1 class="text-3xl font-bold mb-4">Numerical Integration Using Trapezoidal and Simpson's Rule</h1>
+        <h1 class="text-3xl font-bold mb-4">Numerical Integration Using Trapezoidal and Simpson's Rule
+        </h1>
 
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-2">Numerical Integration</h2>
-            <p class="text-gray-700">Numerical integration is a technique for approximating the definite integral of a function over a specified interval. The definite integral represents the signed area under the curve of a function.</p>
+            <h2 class="text-2xl font-bold mb-2 text-lime-700">Numerical Integration</h2>
+            <p class="text-indigo-600 font-medium">Numerical integration is a technique for approximating the definite integral of a
+                function over a specified interval. The definite integral represents the signed area under the curve of
+                a function.</p>
         </div>
 
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-2">Trapezoidal Rule</h2>
-            <p class="text-gray-700">The Trapezoidal Rule is a numerical integration technique that approximates the definite integral of a function by dividing the interval into small subintervals and approximating the area under the curve using trapezoids. It is a relatively simple method but can provide reasonable accuracy for many functions.</p>
-            <p class="mt-4">The formula for approximating the integral using the Trapezoidal Rule is given by:</p>
-            <p class="italic">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ h/2 [f(a) + 2f(x<sub>1</sub>) + 2f(x<sub>2</sub>) + … + 2f(x<sub>n-1</sub>) + f(b)]</p>
-            <ul class="list-disc pl-8 mt-2">
+            <h2 class="text-2xl font-bold mb-2 text-lime-700">Trapezoidal Rule</h2>
+            <p class="text-purple-700 font-medium">The Trapezoidal Rule is a numerical integration technique that approximates the
+                definite integral of a function by dividing the interval into small subintervals and approximating the
+                area under the curve using trapezoids. It is a relatively simple method but can provide reasonable
+                accuracy for many functions.</p>
+            <p class="mt-4 text-purple-700 font-medium">The formula for approximating the integral using the Trapezoidal Rule is
+                given by:</p>
+            <p class="italic font-bold text-red-600">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ h/2 [f(a) + 2f(x<sub>1</sub>) +
+                2f(x<sub>2</sub>) + … + 2f(x<sub>n-1</sub>) + f(b)]</p>
+            <ul class="list-disc pl-8 mt-2 text-purple-700 font-medium">
                 <li><strong>a</strong> and <strong>b</strong> are the lower and upper limits of integration.</li>
                 <li><strong>n</strong> is the number of subintervals.</li>
                 <li>h= (b - a)/n is the width of each subinterval.</li>
@@ -34,15 +42,19 @@
         </div>
 
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-2">Simpson's Rule</h2>
-            <p class="text-gray-700">Simpson's Rule is a numerical integration technique that provides a more accurate approximation of definite integrals by using quadratic polynomials to fit each subinterval.</p>
+            <h2 class="text-2xl font-bold mb-2 text-lime-700">Simpson's Rule</h2>
+            <p class="text-purple-700 font-medium">Simpson's Rule is a numerical integration technique that provides a more accurate
+                approximation of definite integrals by using quadratic polynomials to fit each subinterval.</p>
         </div>
 
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-2">Simpson's One-Third Rule</h2>
-            <p class="text-gray-700">Simpson's One-Third Rule is a special case of Simpson's Rule where the number of subintervals (n) is specifically chosen to be divisible by 2 (even). In this case, the formula becomes:</p>
-            <p class="italic">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ \( \frac{h}{3} \) [f(a) + 4f(x<sub>1</sub>) + 2f(x<sub>2</sub>) + … + 2f(x<sub>n-2</sub>) + 4f(x<sub>n-1</sub>) + f(b)]</p>
-            <ul class="list-disc pl-8 mt-2">
+            <h2 class="text-2xl font-bold mb-2 text-lime-700">Simpson's One-Third Rule</h2>
+            <p class="text-purple-700 font-medium">Simpson's One-Third Rule is a special case of Simpson's Rule where the number of
+                subintervals (n) is specifically chosen to be divisible by 2 (even). In this case, the formula becomes:
+            </p>
+            <p class="italic text-red-600 font-bold">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ \( \frac{h}{3} \) [f(a) +
+                4f(x<sub>1</sub>) + 2f(x<sub>2</sub>) + … + 2f(x<sub>n-2</sub>) + 4f(x<sub>n-1</sub>) + f(b)]</p>
+            <ul class="list-disc pl-8 mt-2 text-purple-700 font-medium">
                 <li><strong>a</strong> and <strong>b</strong> are the lower and upper limits of integration.</li>
                 <li><strong>n</strong> is the number of subintervals. (must be even).</li>
                 <li>h= (b - a)/n is the width of each subinterval.</li>
@@ -51,10 +63,14 @@
         </div>
 
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-2">Simpson's Third-Eighth Rule</h2>
-            <p class="text-gray-700">Simpson's Three-Eighth Rule is another variant that extends Simpson's Rule to handle cases where the number of subintervals is a multiple of 3. The formula for Simpson's Three-Eighth Rule is:</p>
-            <p class="italic">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ \( \frac{3h}{8} \) [f(a) + 3f(x<sub>1</sub>) + 3f(x<sub>2</sub>) + 2f(x<sub>2</sub>) … + 2f(x<sub>n-2</sub>) + 3f(x<sub>n-1</sub>) + f(b)]</p>
-            <ul class="list-disc pl-8 mt-2">
+            <h2 class="text-2xl font-bold mb-2 text-lime-700">Simpson's Third-Eighth Rule</h2>
+            <p class="text-purple-700 font-medium">Simpson's Three-Eighth Rule is another variant that extends Simpson's Rule to
+                handle cases where the number of subintervals is a multiple of 3. The formula for Simpson's Three-Eighth
+                Rule is:</p>
+            <p class="italic text-red-600 font-bold">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ \( \frac{3h}{8} \) [f(a) +
+                3f(x<sub>1</sub>) + 3f(x<sub>2</sub>) + 2f(x<sub>2</sub>) … + 2f(x<sub>n-2</sub>) + 3f(x<sub>n-1</sub>)
+                + f(b)]</p>
+            <ul class="list-disc pl-8 mt-2 text-purple-700 font-medium">
                 <li><strong>a</strong> and <strong>b</strong> are the lower and upper limits of integration.</li>
                 <li><strong>n</strong> is the number of subintervals.(must be multiple of 3)</li>
                 <li>h= (b - a)/n is the width of each subinterval.</li>
@@ -68,7 +84,8 @@
             <h1 class="text-2xl font-bold mb-2">Mathematical Term</h1>
         </div>
         <div>
-            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve : for interval n = 6\[ \int_{0}^{6} \frac{1}{1+x^2} \, dx \]</p>
+            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve : for interval n = 6\[ \int_{0}^{6}
+                \frac{1}{1+x^2} \, dx \]</p>
             <h1 class="text-red-600 font-bold text-lg" id="exact-first">Exact Value : </h1>
             <h1 class="text-yellow-500 font-bold text-lg" id="trapezoidal-first">Using Trapezoidal Method:</h1>
             <h1 class="text-teal-500 font-bold text-lg" id="trapezoidal-error-first">Error Rate: </h1>
@@ -81,20 +98,22 @@
         <br>
 
         <div>
-            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve : for interval n = 6\[ \int_{0}^{12} \frac{1}{1+x^2} \, dx \]</p>
+            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve : for interval n = 6\[ \int_{0}^{12}
+                \frac{1}{1+x^2} \, dx \]</p>
             <h1 class="text-red-600 font-bold text-lg" id="exact-second">Exact Value : </h1>
             <h1 class="text-yellow-500 font-bold text-lg" id="trapezoidal-second">Using Trapezoidal Method:</h1>
             <h1 class="text-teal-500 font-bold text-lg" id="trapezoidal-error-second">Error Rate: </h1>
             <h1 class="text-yellow-500 font-bold text-lg" id="simpson-first-second">Using Simpson's 1-3 Method:</h1>
             <h1 class="text-teal-500 font-bold text-lg" id="simpson-first-second-error">Error Rate: </h1>
-            <h1 class="text-yellow-500 font-bold text-lg"id="simpson-third-second">Using Simpson's 3-8 Method:</h1>
-            <h1 class="text-teal-500 font-bold text-lg"id="simpson-third-second-error">Error Rate: </h1>
+            <h1 class="text-yellow-500 font-bold text-lg" id="simpson-third-second">Using Simpson's 3-8 Method:</h1>
+            <h1 class="text-teal-500 font-bold text-lg" id="simpson-third-second-error">Error Rate: </h1>
         </div>
 
         <br>
 
         <div>
-            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve : for interval n = 6\[ \int_{0}^{18} \frac{1}{1+x^2} \, dx \]</p>
+            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve : for interval n = 6\[ \int_{0}^{18}
+                \frac{1}{1+x^2} \, dx \]</p>
             <h1 class="text-red-600 font-bold text-lg" id="exact-third">Exact Value : </h1>
             <h1 class="text-yellow-500 font-bold text-lg" id="trapezoidal-third">Using Trapezoidal Method:</h1>
             <h1 class="text-teal-500 font-bold text-lg" id="trapezoidal-error-third">Error Rate: </h1>
@@ -109,19 +128,22 @@
         <div class="mb-4">
             <label class="text-blue-500 font-bold text-lg" for="inputA">Enter a:</label>
             <input type="text" id="inputA" placeholder="Enter a value" class="border rounded p-2 mb-3">
-            <br>            
+            <br>
             <label class="text-blue-500 font-bold text-lg" for="inputB">Enter b:</label>
             <input type="text" id="inputB" placeholder="Enter b value" class="border rounded p-2 mb-3">
             <br>
-            <label class="text-blue-500 font-bold text-lg m-auto" for="inputInterval">Enter interval (must be a multiple of 6):</label>
+            <label class="text-blue-500 font-bold text-lg m-auto" for="inputInterval">Enter interval (must be a multiple
+                of 6):</label>
             <input type="text" id="inputInterval" placeholder="Enter interval value" class="border rounded p-2 mr-2">
             <br>
-            <button onclick="calculate()" class="bg-blue-500 text-white text-lg font-medium px-4 py-2 rounded">Calculate</button>
+            <button onclick="calculate()"
+                class="bg-blue-500 text-white text-lg font-medium px-4 py-2 rounded">Calculate</button>
         </div>
 
         <div>
-            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve :\[ \int_{}^{} \frac{1}{1+x^2} \, dx \]</p>
-            <p class="text-red-600 font-bold text-lg" id="input-based"></p>            
+            <p class="text-purple-700 font-semibold text-xl">The Equation We Solve :\[ \int_{}^{} \frac{1}{1+x^2} \, dx
+                \]</p>
+            <p class="text-red-600 font-bold text-lg" id="input-based"></p>
             <h1 class="text-lime-700 font-bold text-lg" id="exact-fourth">Exact Value : </h1>
             <h1 class="text-teal-500 font-bold text-lg" id="trapezoidal-fourth">Using Trapezoidal Method:</h1>
             <h1 class="text-yellow-500 font-bold text-lg" id="trapezoidal-error-fourth">Error Rate: </h1>
@@ -201,7 +223,7 @@
 
             // Validate interval (must be a multiple of 6)
 
-            
+
             if (interval % 6 !== 0) {
                 alert("Interval must be a multiple of 6.");
                 return;
@@ -243,8 +265,6 @@
         document.getElementById("simpson-first-second-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson13Rule(a, b, n)).toFixed(2) + " % ";
         document.getElementById("simpson-third-second-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson38Rule(a, b, n)).toFixed(2) + " % ";
 
-        // for third term
-
         // for second term
         b = 18;
         document.getElementById("exact-third").innerText = "Exact Value : " + integration(a, b).toFixed(5);
@@ -254,8 +274,6 @@
         document.getElementById("trapezoidal-error-third").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Trapezoidal(a, b, n)).toFixed(2) + " % ";
         document.getElementById("simpson-first-third-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson13Rule(a, b, n)).toFixed(2) + " % ";
         document.getElementById("simpson-third-third-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson38Rule(a, b, n)).toFixed(2) + " % ";
-
-
 
 
     </script>
