@@ -18,18 +18,21 @@
 
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-2 text-lime-700">Numerical Integration</h2>
-            <p class="text-indigo-600 font-medium">Numerical integration is a technique for approximating the definite integral of a
+            <p class="text-indigo-600 font-medium">Numerical integration is a technique for approximating the definite
+                integral of a
                 function over a specified interval. The definite integral represents the signed area under the curve of
                 a function.</p>
         </div>
 
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-2 text-lime-700">Trapezoidal Rule</h2>
-            <p class="text-purple-700 font-medium">The Trapezoidal Rule is a numerical integration technique that approximates the
+            <p class="text-purple-700 font-medium">The Trapezoidal Rule is a numerical integration technique that
+                approximates the
                 definite integral of a function by dividing the interval into small subintervals and approximating the
                 area under the curve using trapezoids. It is a relatively simple method but can provide reasonable
                 accuracy for many functions.</p>
-            <p class="mt-4 text-purple-700 font-medium">The formula for approximating the integral using the Trapezoidal Rule is
+            <p class="mt-4 text-purple-700 font-medium">The formula for approximating the integral using the Trapezoidal
+                Rule is
                 given by:</p>
             <p class="italic font-bold text-red-600">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ h/2 [f(a) + 2f(x<sub>1</sub>) +
                 2f(x<sub>2</sub>) + … + 2f(x<sub>n-1</sub>) + f(b)]</p>
@@ -43,13 +46,15 @@
 
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-2 text-lime-700">Simpson's Rule</h2>
-            <p class="text-purple-700 font-medium">Simpson's Rule is a numerical integration technique that provides a more accurate
+            <p class="text-purple-700 font-medium">Simpson's Rule is a numerical integration technique that provides a
+                more accurate
                 approximation of definite integrals by using quadratic polynomials to fit each subinterval.</p>
         </div>
 
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-2 text-lime-700">Simpson's One-Third Rule</h2>
-            <p class="text-purple-700 font-medium">Simpson's One-Third Rule is a special case of Simpson's Rule where the number of
+            <p class="text-purple-700 font-medium">Simpson's One-Third Rule is a special case of Simpson's Rule where
+                the number of
                 subintervals (n) is specifically chosen to be divisible by 2 (even). In this case, the formula becomes:
             </p>
             <p class="italic text-red-600 font-bold">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ \( \frac{h}{3} \) [f(a) +
@@ -64,7 +69,8 @@
 
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-2 text-lime-700">Simpson's Third-Eighth Rule</h2>
-            <p class="text-purple-700 font-medium">Simpson's Three-Eighth Rule is another variant that extends Simpson's Rule to
+            <p class="text-purple-700 font-medium">Simpson's Three-Eighth Rule is another variant that extends Simpson's
+                Rule to
                 handle cases where the number of subintervals is a multiple of 3. The formula for Simpson's Three-Eighth
                 Rule is:</p>
             <p class="italic text-red-600 font-bold">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ \( \frac{3h}{8} \) [f(a) +
@@ -165,20 +171,28 @@
             return Math.atan(b) - Math.atan(a);
         }
 
+
+
         function calculateFunctionValues(a, b, n) {
             const ar = [];
-            const h = (b - a) / n;
-            for (let i = a; i <= b; i += h) {
+            let h = (b - a) / n;
+
+            for (let i = a; i <=b; i += h) {
                 ar.push(equation(i));
             }
+
+            if(ar.length == n ) ar.push(equation(b));
+
+            console.log(ar.length);
+
             return ar;
         }
 
         function Trapezoidal(a, b, n) {
             let h = (b - a) / n;
             const ar = calculateFunctionValues(a, b, n);
-            let ans = ar[0] + ar[n];
-            for (let i = 1; i < n; i++) {
+            let ans = ar[0] + ar[ar.length-1];
+            for (let i = 1; i < ar.length-1; i++) {
                 ans += 2 * ar[i];
             }
             return ans * (h / 2);
@@ -187,11 +201,11 @@
         function Simpson13Rule(a, b, n) {
             let h = (b - a) / n;
             const ar = calculateFunctionValues(a, b, n);
-            let ans = ar[0] + ar[n];
-            for (let i = 1; i < n; i += 2) {
+            let ans = ar[0] + ar[ar.length-1];
+            for (let i = 1; i < ar.length-1; i += 2) {
                 ans += 4 * ar[i];
             }
-            for (let i = 2; i < n; i += 2) {
+            for (let i = 2; i < ar.length-1; i += 2) {
                 ans += 2 * ar[i];
             }
             return ans * (h / 3);
@@ -200,8 +214,8 @@
         function Simpson38Rule(a, b, n) {
             let h = (b - a) / n;
             const ar = calculateFunctionValues(a, b, n);
-            let ans = ar[0] + ar[n];
-            for (let i = 1; i < n; i++) {
+            let ans = ar[0] + ar[ar.length-1];
+            for (let i = 1; i < ar.length-1; i++) {
                 if (i % 3) {
                     ans += 3 * ar[i];
                 }
@@ -244,7 +258,7 @@
 
         }
 
-        // for first term
+        // // for first term
         let a = 0, b = 6, n = 6;
 
         document.getElementById("exact-first").innerText = "Exact Value : " + integration(a, b).toFixed(5);
@@ -255,7 +269,7 @@
         document.getElementById("simpson-first-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson13Rule(a, b, n)).toFixed(2) + " % ";
         document.getElementById("simpson-third-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson38Rule(a, b, n)).toFixed(2) + " % ";
 
-        // for second term
+        // // for second term
         b = 12;
         document.getElementById("exact-second").innerText = "Exact Value : " + integration(a, b).toFixed(5);
         document.getElementById("trapezoidal-second").innerText = "Using Trapezoidal Method: " + + Trapezoidal(a, b, n).toFixed(5);
@@ -265,7 +279,7 @@
         document.getElementById("simpson-first-second-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson13Rule(a, b, n)).toFixed(2) + " % ";
         document.getElementById("simpson-third-second-error").innerText = "Error Rate: " + calculateErrorRate(integration(a, b), Simpson38Rule(a, b, n)).toFixed(2) + " % ";
 
-        // for second term
+        // // for second term
         b = 18;
         document.getElementById("exact-third").innerText = "Exact Value : " + integration(a, b).toFixed(5);
         document.getElementById("trapezoidal-third").innerText = "Using Trapezoidal Method: " + + Trapezoidal(a, b, n).toFixed(5);
